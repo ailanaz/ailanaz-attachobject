@@ -68,11 +68,11 @@ AddEventHandler("onResourceStop", function(resourceName)
     end
 end)
 
-RegisterNetEvent("sf-attachobject:getPlayerObjects", function(data)
+RegisterNetEvent("ailanaz-attachobject:getPlayerObjects", function(data)
     PlayerToObjects = data
 end)
 
-RegisterNetEvent("sf-attachobject:internal:addObject", function(objectId, playerId, objectName)
+RegisterNetEvent("ailanaz-attachobject:internal:addObject", function(objectId, playerId, objectName)
     if RegisteredObjects[objectName] == nil then return end
     local objectData = {
         playerId = playerId,
@@ -89,7 +89,7 @@ RegisterNetEvent("sf-attachobject:internal:addObject", function(objectId, player
     end
 end)
 
-RegisterNetEvent("sf-attachobject:internal:removeObject", function(objectId)
+RegisterNetEvent("ailanaz-attachobject:internal:removeObject", function(objectId)
     if type(objectId) == "string" then
         removeObject(objectId)
     else
@@ -99,7 +99,7 @@ RegisterNetEvent("sf-attachobject:internal:removeObject", function(objectId)
     end
 end)
 
-RegisterNetEvent("sf-attachobject:playerObjects", function(data)
+RegisterNetEvent("ailanaz-attachobject:playerObjects", function(data)
     Objects = data
 end)
 
@@ -139,7 +139,7 @@ RegisterNetEvent("onPlayerDropped", function(playerId)
     end
 end)
 
-RegisterNetEvent("sf-attachobject:propfix", function()
+RegisterNetEvent("ailanaz-attachobject:propfix", function()
     local objects = GetGamePool("CObject")
     local playerPed = PlayerPedId()
     for i=1, #objects do
